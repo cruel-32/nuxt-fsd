@@ -1,7 +1,17 @@
 <script setup lang="ts">
 const route = useRoute();
-const { t, locale, locales, setLocale } = useI18n();
+const router = useRouter();
+const { t, locale, locales } = useI18n();
 const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
+
+// 언어 변경 시 URL 라우팅
+const changeLanguage = (event: Event) => {
+  const target = event.target as HTMLSelectElement;
+  const newLocale = target.value as 'en' | 'ko';
+  const path = switchLocalePath(newLocale);
+  router.push(path);
+};
 
 // URL 쿼리 파라미터로부터 현재 상태 도출 (computed)
 const currentQuery = computed<FetchTestQuery>(() => {
@@ -57,7 +67,8 @@ const changeCommentPage = (page: number) => {
       <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-gray-800">{{ t('api_test') }}</h1>
         <select
-          v-model="locale"
+          :value="locale"
+          @change="changeLanguage"
           class="border border-gray-300 rounded-md p-2 text-gray-700"
         >
           <option value="ko">한국어</option>

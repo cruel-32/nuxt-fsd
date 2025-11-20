@@ -34,7 +34,13 @@ export default defineNuxtConfig({
 
     langDir: 'locales',
     defaultLocale: 'ko',
-    strategy: 'prefix_and_default', // or 'prefix_except_default'
+    strategy: 'prefix_except_default', // 기본 언어는 접두사 없음, 다른 언어는 /en 같은 접두사 사용
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: false,
+      fallbackLocale: 'ko',
+    },
   },
   // `css`: 전역으로 적용할 CSS 파일을 등록합니다.
   // css: [
