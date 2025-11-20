@@ -1,5 +1,3 @@
-import { ref, computed } from 'vue';
-
 // FSD: 이 Composable은 JoinForm 기능의 비즈니스 로직을 담당합니다.
 export function useJoinForm() {
   // --- 상태 (State) ---

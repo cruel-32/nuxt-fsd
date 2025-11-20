@@ -1,0 +1,15 @@
+{
+  "welcome": "환영합니다",
+  "api_test": "API 페이지네이션 테스트",
+  "page_selection": "페이지 선택",
+  "current_query": "현재 쿼리 (URL로부터)",
+  "api_response": "API 응답",
+  "loading": "로딩 중...",
+  "error": "오류",
+  "comments": "댓글",
+  "comments_page": "댓글 페이지",
+  "loading_comments": "댓글 로딩 중...",
+  "error_loading_comments": "댓글 로딩 오류",
+  "debug_info": "디버그 정보",
+  "debug_desc": "메인 쿼리가 변경되면 댓글 쿼리가 자동으로 업데이트됩니다."
+}

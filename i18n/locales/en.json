@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome",
+  "api_test": "API Pagination Test",
+  "page_selection": "Page Selection",
+  "current_query": "Current Query (From URL)",
+  "api_response": "API Response",
+  "loading": "Loading...",
+  "error": "Error",
+  "comments": "Comments",
+  "comments_page": "Comments Page",
+  "loading_comments": "Loading comments...",
+  "error_loading_comments": "Error loading comments",
+  "debug_info": "Debug Info",
+  "debug_desc": "Comment query updates automatically when main query changes."
+}
