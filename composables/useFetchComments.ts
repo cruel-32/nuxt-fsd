@@ -6,13 +6,15 @@ export interface FetchCommentsQuery {
   page: number;
 }
 
-export const useFetchComments = <T = any>(
+export const useFetchComments = <ResT = unknown>(
   query: MaybeRef<FetchCommentsQuery>,
-  options: UseFetchOptions<T> = {},
+  options?: Pick<
+    UseFetchOptions<ResT>,
+    'key' | 'server' | 'lazy' | 'immediate' | 'deep' | 'dedupe' | 'watch'
+  >,
 ) => {
-  return useFetch<T>('http://localhost:3001/comments', {
+  return useFetch<ResT>('http://localhost:3001/comments', {
     ...options,
-    method: 'GET',
     query,
   });
 };

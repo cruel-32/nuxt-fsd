@@ -7,13 +7,12 @@ export interface FetchTestQuery {
   date: string;
 }
 
-export const useFetchTest = <T = any>(
+export const useFetchTest = <ResT = unknown>(
   query: MaybeRef<FetchTestQuery>,
-  options: UseFetchOptions<T> = {},
+  options?: Pick<
+    UseFetchOptions<ResT>,
+    'key' | 'server' | 'lazy' | 'immediate' | 'deep' | 'dedupe' | 'watch'
+  >,
 ) => {
-  return useFetch<T>('http://localhost:3001', {
-    ...options,
-    method: 'GET',
-    query,
-  });
+  return useFetch<ResT>('http://localhost:3001', { ...options, query });
 };
